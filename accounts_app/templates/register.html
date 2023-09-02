@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
-  <title>Registration</title>
+  <title>Sign Up</title>
 </head>
 <body>
 {% if forms.non_field_errors %} 
@@ -22,7 +22,10 @@
 {% load crispy_forms_tags %}
 
 <div style="width: 50%; margin: auto;">
-<h1 style="text-align: center; padding: 15px; color: green; font-size: 80px">Registration</h1>
+<h1 style="text-align: center; margin-top: 60px; color: green; font-size: 40px">Sign Up</h1>
+<div style="width:50%; margin: auto; color: black; margin-top: 0px;">
+  -----------------------------------------------------------
+</div>
 
   <form method= "POST" style="margin-bottom: 50px; margin-top: 50px;" novalidate>
     {% csrf_token %}
