@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% block title %}Searching Result{% endblock title %}
+{% load static %}
+{% block join_css %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock join_css %}
+{% block body %}
+
+<div style="width:70%; margin:auto; margin-bottom: 400px;" class="bg-aqua">
+
+  <table class="table table-striped" style="text-align: center; margin-top: 50px;">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Course</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+        <th scope="col">More Info</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for crud in persons %}
+      <tr>
+       
+        <th scope="row">{{crud.id}}</th>
+        <td> {{crud.name}} </td>
+        <td> {{crud.phone}} </td>
+        <td> {{crud.email}} </td>
+        <td> {{crud.course}} </td>
+        <td> <a href="{% url 'update_crud' crud.id %}" class="btn btn-warning">Update</a> </td>
+        <td> <a href="{% url 'delete_crud' crud.id %}" class="btn btn-danger">Delete</a> </td>
+        <td> <a href="{% url 'more_info' crud.id %}" class="btn btn-primary">MoreInfo</a> </td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}
+
+
+

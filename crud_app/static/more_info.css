@@ -1,0 +1,11 @@
+
+body{
+    background-image: url('images/bgc.jpg');
+    background: aquamarine;
+    color: black;
+}
+.images{
+    max-width: 200px;
+    max-height: 200px;
+    
+}

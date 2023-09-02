@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Info{% endblock title %}
+{% block join_css %}
+<link rel="stylesheet" href="{% static 'more_info.css' %}">
+{% endblock join_css %}
+{% block body %}
+<div style=" text-align: left; margin-top: 70px; margin-left: 100px; margin-bottom: 70px;">
+
+    <img src="{{info.image.url}}" alt="user image" class="images">
+
+    <h3>ID:- {{info.id}}</h3>
+
+    <h3>Name:- {{info.name}}</h3>
+
+    <h3>Phone:- {{info.phone}}</h3>
+
+    <h3>Course:- {{info.course}}</h3>
+
+    <h3>Description:- {{info.description}}</h3>
+
+    <h3>Created Date:- {{info.created_date}}</h3>
+
+    <h3>Last Update:- {{info.modify_date}}</h3>
+
+    <a class="btn btn-primary" href="{% url 'update_crud' info.id %}">Update</a>
+    <a class="btn btn-primary" href="{% url 'show_crud' %}">Back</a>
+
+
+</div>
+
+{% endblock body %}

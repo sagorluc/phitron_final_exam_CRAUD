@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block join_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock join_css %}
+{% block body %}
+
+<h1 style="margin-top: 10px; margin-left: 110px;">
+    User: {{user.username}}
+  </h1>
+
+<div class="container overflow-hidden text-center" style="margin-top: 100px; margin-bottom: 200px;">
+    <div class="row gy-5">
+      <div class="col-6" style="background: green; font-size: 25px; border-radius: 30px;">
+        <div class="p-3">
+            <a href="{% url 'create_post' %}" style="text-decoration: None; color: white">
+            Create Post
+        </a></div>
+        
+      </div>
+      <div class="col-6" style="background: red; font-size: 25px; border-radius: 30px;">
+        <div class="p-3">
+            <a href="{% url 'show_crud' %}" style="text-decoration: None; color: white">
+                Show Post
+            </a>
+        </div>
+      </div>
+      <div class="col-6" style="background: antiquewhite; font-size: 25px; border-radius: 30px;">
+        <div class="p-3">
+            <a href="{% url 'search' %}" style="text-decoration: None; color: black">
+                Search Post
+            </a>
+        </div>
+      </div>
+      <div class="col-6" style="background: black; color: white; font-size: 25px; border-radius: 30px;">
+        <div class="p-3"><a href="{% url 'home' %}" style="text-decoration: None; color: white">
+            Stay At Home
+        </a></div>
+      </div>
+    </div>
+  </div>
+
+{% endblock body %}
