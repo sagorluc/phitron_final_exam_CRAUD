@@ -24,7 +24,7 @@ def log_in(request):
         
         
         user = authenticate(username = username, password = password)
-        
+        print(user)
         if user is not None:
             login(request, user)
             messages.success(request, 'Loged in successfully')
