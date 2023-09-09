@@ -3,7 +3,7 @@ from crud_app.views import show_crud, create_crud, update_crud, delete_crud,\
 more_info, search_item, home
 
 urlpatterns = [
-    path('home/', home, name='home'),
+    path('', home, name='home'),
     path('show_crud/', show_crud, name='show_crud'),
     path('create/', create_crud, name='create_post'),
     path('update/<int:id>/', update_crud, name='update_crud'),
